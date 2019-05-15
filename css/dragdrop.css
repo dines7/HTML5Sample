@@ -1,0 +1,22 @@
+#leftDIV{
+    background-color: aqua;
+    width: 400px;
+    height: 400px;
+}
+
+#rightDIV{
+    background-color: chocolate;
+    width: 400px;
+    height: 400px;
+}
+
+#centerDIV{
+    background-color:cornflowerblue;
+    width: 400px;
+    height: 400px;
+}
+
+.imgSize{
+    width: 100px;
+    height: 50px;
+}

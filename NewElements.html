@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body onload="setDefaultvalue()" >
+        <h2>New Elements in HTML5</h2>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div>
+                    <label>Name: </label>
+                    <input type="text" autofocus required pattern="[A-Za-z\s]{0,20}">
+                </div>
+                <br>
+                <div>
+                    <label>DOB</label>
+                    <input type="date" min="2019-05-06" step="2" id="todaydate">
+                </div>
+                <br>
+                <div>
+                    <label>Age</label>
+                    <input type="number" min="10" max="100" step="10">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Professional Information</legend>
+                <div>
+                    <label>Email</label>
+                    <input type="email">
+                </div>
+                <br>            
+                <div>
+                    <label>Website</label>
+                    <input type="url">
+                </div>
+                <br>
+                <div>
+                    <label>How is the Josh</label>
+                    <input type="range" min="0" max="10" step="5" >
+                </div>
+                <br>
+                <div>
+                    <input type="color">
+                </div>
+                <br>
+                <div>
+                    <progress min="0" max="100" value="5"></progress>
+
+                </div>
+                <br>
+                <div>
+                    <label>Use ngrok to publish the site from local</label>
+                </div>
+                <br>
+                <label>Select your location:</label>
+                <input type="text" list="cityname">
+                <datalist id="cityname">
+                    <option value="chennai">chennai</option>
+                    <option value="madurai">madurai</option>
+                    <option value="cbe">cbe</option>
+                    <option value="trichy">trichy</option>
+                    <option value="pudukt">pudukt</option>
+                </datalist>
+            </fieldset>
+            <br>
+            <button type="submit">Submit Form</button>
+        </form>
+        <script>
+        
+            var setDefaultvalue=function(){
+                //document.getElementById("todaydate").valueAsdate= new Date()
+                var date=new Date().toISOString()
+                console.log(date)
+                var todaydat=date.split("T")[0]
+                document.getElementById("todaydate").max= todaydat;
+                console.log(todaydat)
+
+            }
+        </script>
+    </body>
+</html>

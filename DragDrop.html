@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/dragdrop.css">
+</head>
+<body>
+    <h1>Drag and Drop Tutorial</h1>
+    <div>
+    <div id="rightDIV" ondragover="dragTo(event)" ondrop="imageDropped(event)"></div>
+    <div id="centerDIV" ondragover="dragTo(event)" ondrop="imageDropped(event)">
+        <img id="imgLogo" class="imgSize" src="download.png" draggable="true" alt="Logo" ondragstart="imageDragged(event)">
+        <img id="imgLogo1" class="imgSize" src="bg.jpg" draggable="true" alt="Logo" ondragstart="imageDragged(event)">
+    </div>
+    <div id="leftDIV" ondragover="dragTo(event)" ondrop="imageDropped(event)"></div>
+</div>
+
+    <script>
+
+        var imageDragged = function(e){
+            console.log(e.target.id);
+            e.dataTransfer.setData("imageid", e.target.id)
+        }
+
+        var dragTo = function(e){
+            e.preventDefault();
+        }
+
+        var imageDropped = function(e){
+            var newImageID = e.dataTransfer.getData("imageid");
+            console.log(newImageID)
+            var newLogo = document.getElementById(newImageID)
+            e.target.appendChild(newLogo)
+        }
+
+    </script>
+</body>
+</html>
